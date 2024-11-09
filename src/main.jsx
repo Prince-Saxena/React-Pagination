@@ -3,15 +3,15 @@ import ReactDOM from "react-dom/client";
 import { Home, App, AboutUs, ContactUs, MyPath, Github } from "./index.js";
 import {
 	RouterProvider,
-	createBrowserRouter,
+	createHashRouter,
 	createRoutesFromElements,
 	Route,
 } from "react-router-dom";
 import "./index.css";
 import { Gitinfo } from "./Components/Github/Github.jsx";
 
-// Router setup
-const router = createBrowserRouter(
+// Router setup using HashRouter
+const router = createHashRouter(
 	createRoutesFromElements(
 		<Route path="/" element={<App />}>
 			<Route path="" element={<Home />} />
