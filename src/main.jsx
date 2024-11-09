@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import { Home, App, AboutUs, ContactUs, MyPath, Github } from "./index.js";
 import {
 	RouterProvider,
@@ -14,7 +14,7 @@ import { Gitinfo } from "./Components/Github/Github.jsx";
 const router = createHashRouter(
 	createRoutesFromElements(
 		<Route path="/" element={<App />}>
-			<Route path="" element={<Home />} />
+			<Route index element={<Home />} />
 			<Route path="about" element={<AboutUs />} />
 			<Route path="contact" element={<ContactUs />} />
 			<Route path="user/:userid" element={<MyPath />} />
@@ -24,7 +24,7 @@ const router = createHashRouter(
 );
 
 // Render the app
-ReactDOM.createRoot(document.getElementById("root")).render(
+createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
 		<RouterProvider router={router} />
 	</React.StrictMode>
